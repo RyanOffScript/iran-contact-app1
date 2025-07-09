@@ -4,13 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Iranian Family Contact App</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    ul { list-style: none; padding: 0; }
-    li { margin-bottom: 10px; }
-    input { padding: 5px; margin-right: 10px; }
-    button { padding: 5px 10px; }
-  </style>
+  <link rel="stylesheet" href="iran_contact_app.css">
 </head>
 <body>
   <h1>Iranian Family Contact App</h1>
@@ -18,39 +12,6 @@
   <input type="text" id="number" placeholder="Enter phone number" />
   <button onclick="addContact()">Add Contact</button>
 
-  <script>
-    const contacts = [
-      { id: 1, name: "Maman", phone: "+98xxxxxxxxxx" },
-      { id: 2, name: "Baba", phone: "+98xxxxxxxxxx" },
-      { id: 3, name: "Khalayei", phone: "+98xxxxxxxxxx" }
-    ];
-
-    function renderContacts() {
-      const list = document.getElementById("contact-list");
-      list.innerHTML = "";
-      contacts.forEach(contact => {
-        const item = document.createElement("li");
-        item.innerHTML = `${contact.name}: ${contact.phone} <button onclick="call('${contact.phone}')">Call</button>`;
-        list.appendChild(item);
-      });
-    }
-
-    function addContact() {
-      const number = document.getElementById("number").value;
-      if (number.trim() !== "") {
-        contacts.push({ id: Date.now(), name: "New Contact", phone: number });
-        renderContacts();
-        document.getElementById("number").value = "";
-      }
-    }
-
-    function call(phone) {
-      window.location.href = `tel:${phone}`;
-    }
-
-    window.onload = renderContacts;
-  </script>
   <script src="iran_contact_app.js"></script>
-
 </body>
 </html>
